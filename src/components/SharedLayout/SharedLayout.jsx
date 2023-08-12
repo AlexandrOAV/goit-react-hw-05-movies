@@ -1,12 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
 import Footer from "../Footer/Footer";
+import css from "./SharedLayout.module.css"
 
 const SharedLayout = () => {
     return (
-      <div>
+      <div className={ css.conteiner}>
          <ToastContainer
             position="top-right"
 autoClose={5000}
@@ -20,20 +20,28 @@ pauseOnHover
 theme="light"
 />
         <ToastContainer />
-        <header>
+        <header className={css.header}>
         <nav>
-          <ul>
-            <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/movies'>Movies</NavLink></li>
+          <ul className={css.list_menu}>
+              <li className={css.menu_item}>
+                <NavLink
+                className={({ isActive }) =>isActive ? css.activeLink : css.menu_item}
+                to='/'>
+                Home</NavLink>
+              </li>
+              <li className={css.menu_item}>
+                <NavLink className={({ isActive }) =>isActive ? css.activeLink : css.menu_item}
+                to='/movies'>Movies</NavLink>
+              </li>
           </ul>
         </nav>
         </header>  
         <main>
             <Outlet/>
         </main>
-        <footer>
-          <Footer/>
-        </footer>
+        <footer className={css.foter_lay}>
+           <Footer/>
+         </footer>
     </div>
   
        

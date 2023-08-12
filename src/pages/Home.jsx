@@ -35,9 +35,6 @@ const Home = () => {
     
 const clickInLoadMore = () => setPage(prevState => prevState + 1);
 
-   
-    
-
     return (
         <section>
              <MoviesGallery
@@ -47,7 +44,6 @@ const clickInLoadMore = () => setPage(prevState => prevState + 1);
                 clickInLoadMore={clickInLoadMore}
                 isLoading={isLoading}
           />
-     
         </section>
     )
 }

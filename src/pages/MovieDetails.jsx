@@ -1,13 +1,14 @@
 import DatailsMovie from "components/DatailsMovie/DatailsMovie"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getMovieDetails } from "resurces/resurses";
 
 const defaultImg = 'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 const MovieDetails = () => {
-        const { id } = useParams();
+    const { id } = useParams();
+
     const [isLoading, setIsLoading] = useState(false);
     const [title, setTitle] = useState('');
     const [overview, setOverview] = useState('');
@@ -25,7 +26,6 @@ const MovieDetails = () => {
          try {
       setIsLoading(true);
       const newData = await getMovieDetails(id);
-             console.log('newData', newData);
              const { title, overview, vote_average, poster_path } = newData;
              setTitle(title);
              setOverview(overview);
@@ -37,9 +37,10 @@ const MovieDetails = () => {
       toast.error(`API NOT FAUND: ${error.message}`)
     } finally {setIsLoading(false)}
     }
-     const urlPoster = 'https://image.tmdb.org/t/p/w500';
-    const url =  posterImage ? `${urlPoster}${posterImage}` : defaultImg;
+    const urlPoster = 'https://image.tmdb.org/t/p/w500';
+    const url =  posterImage ? `${urlPoster}${posterImage}` :setTimeout(()=>defaultImg, 1000) ;
     return (
+        <>
         <DatailsMovie
             isLoading={isLoading}
             title={title}
@@ -47,6 +48,12 @@ const MovieDetails = () => {
             voteAverage={voteAverage}
             url={url}
         />
+             <ul>
+                <li><Link to='cast'>Cast</Link></li>
+                <li><Link to='reviews'>Reviews</Link></li> 
+            </ul>
+            <Outlet/>
+            </>
     )
 }
 export default MovieDetails

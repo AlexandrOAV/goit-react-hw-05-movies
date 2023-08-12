@@ -1,7 +1,11 @@
+// import MoviesGallery from "components/MoviesGallery/MoviesGallery";
+import Searchbar from "components/Searchbar/Searchbar";
+
 const Movies = () => {
     return (
         <div>
-             сторінка пошуку кінофільмів за ключовим словом.
+            <Searchbar />
+            {/* <MoviesGallery/> */}
         </div>
     )
 }
