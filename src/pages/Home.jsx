@@ -21,7 +21,6 @@ const Home = () => {
     try {
       setIsLoading(true);
       const newData = await getTrendingMovies(page);
-    //   console.log('newData.results ', newData.results);
       if (newData.results === 0) {
         toast.error('Movies not faund')
         return;
@@ -36,7 +35,8 @@ const Home = () => {
 const clickInLoadMore = () => setPage(prevState => prevState + 1);
 
     return (
-        <section>
+      <section>
+        
              <MoviesGallery
                 results={results}
                 alt={`poster movies ${results.title}`}

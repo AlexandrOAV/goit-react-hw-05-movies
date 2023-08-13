@@ -1,0 +1,12 @@
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+ .list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 24px;
+     row-gap: 24px;
+ }

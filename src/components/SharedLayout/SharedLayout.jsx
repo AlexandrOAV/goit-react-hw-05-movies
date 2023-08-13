@@ -6,7 +6,7 @@ import css from "./SharedLayout.module.css"
 
 const SharedLayout = () => {
     return (
-      <div className={ css.conteiner}>
+      <div className={ css.wrapper}>
          <ToastContainer
             position="top-right"
 autoClose={5000}
@@ -21,27 +21,30 @@ theme="light"
 />
         <ToastContainer />
         <header className={css.header}>
-        <nav>
-          <ul className={css.list_menu}>
-              <li className={css.menu_item}>
+           <nav className={css.container}>
+                <ul className={css.list_menu}>
+                  <li className={css.menu_item}>
                 <NavLink
                 className={({ isActive }) =>isActive ? css.activeLink : css.menu_item}
                 to='/'>
                 Home</NavLink>
-              </li>
-              <li className={css.menu_item}>
+                 </li>
+                  <li className={css.menu_item}>
                 <NavLink className={({ isActive }) =>isActive ? css.activeLink : css.menu_item}
                 to='/movies'>Movies</NavLink>
-              </li>
-          </ul>
-        </nav>
+                 </li>
+               </ul>
+             </nav>
         </header>  
-        <main>
+        <main className={css.content}>
             <Outlet/>
         </main>
         <footer className={css.foter_lay}>
+          <section className={css.container}>
            <Footer/>
-         </footer>
+           </section>
+        </footer>
+      
     </div>
   
        

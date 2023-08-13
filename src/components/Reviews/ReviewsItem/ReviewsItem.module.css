@@ -1,0 +1,18 @@
+  .headItem {
+    font-weight: 700;
+  font-size: 24px;
+  line-height:1.2;
+  letter-spacing: 0.02em;
+  margin-bottom: 10x;
+  }
+ .text{
+    font-weight: 400;
+        font-size: 18px;
+        line-height: 1.3;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+ }
+.itemRewiew {
+  margin-bottom: 25px;
+  border-bottom: 1px solid black;
+}

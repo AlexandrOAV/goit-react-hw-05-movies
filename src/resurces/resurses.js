@@ -61,4 +61,24 @@ export async function getCastAndReviews(id, getText) {
         toast.error(`API not faund: ${error.message}`)
         throw new Error(error.message);
     }
+};
+
+export async function serchMovies(serch) {
+    const url = `${BASE_URL}/search/movie`
+    const options = {
+        params: {
+            api_key: KEY,
+            query: serch,
+            },    
+    }
+    try {
+        const response = await axios(url, options);
+        const dataRespons = await response.data;
+        // console.log('dataRespons: ', dataRespons);
+        return dataRespons;
+    }
+    catch (error) {
+        toast.error(`API not faund: ${error.message}`)
+        throw new Error(error.message);
+    }
 }

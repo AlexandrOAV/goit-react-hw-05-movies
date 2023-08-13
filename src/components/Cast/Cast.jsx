@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getCastAndReviews } from "resurces/resurses";
 import CastItem from "./CastItem/CastItem";
-
+import css from "./Cast.module.css"
 const Cast = () => {
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(false);
@@ -31,10 +31,10 @@ async function inActorArray(id) {
     const showCast = Array.isArray(cast) && cast.length > 0;
     
     return (
-        <section>
+        <section className={css.container}>
              {isLoading && <Loader />}
             <h1>Cast</h1>
-            <ul>
+            <ul className={css.list}>
                 {showCast&&
                     cast.map(({ name, character, id, profile_path }) => 
                         <CastItem

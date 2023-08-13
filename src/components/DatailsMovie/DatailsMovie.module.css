@@ -1,0 +1,94 @@
+.link{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    background-color: rgb(147, 151, 151);
+    color:black;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 8px;
+    }
+
+.link:is(:hover, :focus){
+    background-color: rgb(147, 151, 151);
+    color:white;
+    box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+ 
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.movieTitle {
+    display: block;
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.text{
+    display: block;
+    color: #000000;
+    font-weight: 400;
+        font-size:20px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+    margin-bottom: 5px;
+}
+.textData{
+    margin-top: 20px;
+    display: block;
+        color: #000000;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        margin-bottom: 5px;
+
+}
+.textInfo{
+    max-width: 500px;
+}
+.blockInfo{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.addLink{
+     padding: 5px;
+    color: #000000;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        background-color: rgb(147, 151, 151);
+}
+.itemDetail{
+    display: flex;
+    gap: 15px;
+    
+}
+.textRating{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;    
+    width: 100px;
+    height: 100px;
+    background-color: rgb(209, 209, 203);
+    font-weight: 400;
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        text-align: center;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+
+
+}
+

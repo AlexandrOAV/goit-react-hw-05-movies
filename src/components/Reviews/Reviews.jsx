@@ -1,3 +1,4 @@
+import css from "./Reviews.module.css"
 import { Loader } from "components/Loader/Loader";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -6,7 +7,6 @@ import { getCastAndReviews } from "resurces/resurses";
 import ReviewsItem from "./ReviewsItem/ReviewsItem";
 
 const Reviews = () => {
-
     const { id } = useParams();
     const [isLoading, setIsLoading] = useState(false);
     const [reviews, setReviews] = useState([]);
@@ -29,11 +29,11 @@ useEffect(() => {
 
     const showReviews = Array.isArray(reviews) && reviews.length > 0;
     return (
-     <section>
+     <section className={css.container}>
             {isLoading && <Loader />}
             <h1>Reviews</h1>
              {reviews.length === 0 && <p>Sorry, but no rewiews</p>}
-            <ul>
+            <ul >
                 {showReviews&&
                     reviews.map(({ id, author, content, updated_at}) => 
                         <ReviewsItem
