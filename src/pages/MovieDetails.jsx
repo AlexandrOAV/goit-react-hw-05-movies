@@ -42,12 +42,12 @@ const MovieDetails = () => {
     } finally {setIsLoading(false)}
   }
   
-  const urlPoster = 'https://image.tmdb.org/t/p/w500';
+    const urlPoster = 'https://image.tmdb.org/t/p/w500';
   const url = posterImage ? `${urlPoster}${posterImage}` : defaultImg;
   
     return (
-      <section>
-                <DatailsMovie
+        <section>
+        <DatailsMovie
                 isLoading={isLoading}
                 title={title}
                 overview={overview}
