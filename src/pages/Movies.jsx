@@ -56,7 +56,7 @@ const clickInLoadMore = () => setPage(prevState => prevState + 1);
     }
         return (
        <section>
-         {/* {results===[]&&<Navigate to = '/'/>} */}
+  
             <Searchbar onSubmit={hendleSerchSubmit} />
             {querySearch &&
                 <MoviesGallery
