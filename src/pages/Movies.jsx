@@ -1,4 +1,3 @@
-// import MoviesGallery from "components/MoviesGallery/MoviesGallery";
 import MoviesGallery from "components/MoviesGallery/MoviesGallery";
 import Searchbar from "components/Searchbar/Searchbar";
 import { useEffect } from "react";
@@ -55,9 +54,9 @@ const clickInLoadMore = () => setPage(prevState => prevState + 1);
                  setPage(1)
      }
     }
-    
-     return (
-        <section>
+        return (
+       <section>
+         {/* {results===[]&&<Navigate to = '/'/>} */}
             <Searchbar onSubmit={hendleSerchSubmit} />
             {querySearch &&
                 <MoviesGallery
